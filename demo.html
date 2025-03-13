@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siva Prakash S - AI & Data Science Engineer</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            background-color: #dbeafe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .name-title {
+            flex: 1;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--light-gray);
+        }
+        
+        .header-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(37, 99, 235, 0.1));
+            z-index: 1;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            display: block;
+            padding: 1.2rem 1.5rem;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            color: var(--primary);
+        }
+        
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .objective p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            line-height: 1.7;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .skill-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-item,
+        .education-item,
+        .project-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .item-subtitle {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-date {
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .item-content ul {
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .item-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .certification-badge {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .badge-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .badge-content h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .badge-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            color: var(--gray);
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .button:hover {
+            background-color: #1d4ed8;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .profile-img {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .title {
+                font-size: 1.3rem;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: white;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                transition: transform 0.3s;
+                z-index: 99;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li a {
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid var(--light-gray);
+            }
+            
+            .item-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-section">
+                    <div class="profile-img">SP</div>
+                    <div class="name-title">
+                        <h1>SIVA PRAKASH S</h1>
+                        <div class="title">ARTIFICIAL INTELLIGENCE AND DATA SCIENCE ENGINEER</div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span>📍</span>
+                                <span>Coimbatore, Tamil Nadu, India</span>
+                            </div>
+                            <div class="contact-item">
+                                <span>📧</span>
+                                <span>siva99527@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <span>📱</span>
+                                <span>+91 9363440752</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bg"></div>
+    </header>
+    
+    <nav>
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <span style="font-weight: 600; color: var(--primary);">S.P</span>
+            </div>
+            <button class="mobile-nav-toggle" onclick="toggleNav()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <section id="about" class="objective">
+            <div class="container">
+                <h2>OBJECTIVE</h2>
+                <p>I am actively seeking internship opportunities in the field of artificial intelligence and data science. My projects, which I have uploaded online, showcase my skills and expertise, making me a strong candidate for engineering internships. With hands-on experience in advanced AI technologies and backend development, I aim to contribute to innovative projects while continuing to expand my technical capabilities.</p>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <div class="container">
+                <h2>EXPERIENCE</h2>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">INTERN | REAL-TIME REPORT GENERATOR FOR CLOUD ZOO ERP PLATFORM</div>
+                            <div class="item-subtitle">Cloud Zoo</div>
+                        </div>
+                        <div class="item-date">AUG 2024 - SEP 2024</div>
+                    </div>
+                    <div class="item-content">
+                        <ul>
+                            <li>Developed an intelligent system to generate real-time reports for the Cloud Zoo ERP platform.</li>
+                            <li>Leveraged advanced NLP and automation techniques to analyze data and provide insights.</li>
+                            <li>Enhanced data accessibility to support informed decision-making within organizations.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">ADVANCED ARTIFICIAL INTELLIGENCE (AI) INTERN</div>
+                            <div class="item-subtitle">CODEGALATTA | CHENNAI, INDIA</div>
+                        </div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <div class="item-content">
+                        <p>An internship in Advanced AI, gaining expertise in the following areas:</p>
+                        <ul>
+                            <li>Natural Language Generation (NLG) & Understanding (NLU)</li>
+                            <li>Speech Recognition & Machine Learning (ML)</li>
+                            <li>Virtual Agents & Expert Systems</li>
+                            <li>Deep Learning & Robotic Process Automation (RPA)</li>
+                            <li>Text Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">BACKEND PYTHON (FLASK) DEVELOPER</div>
+                            <div class="item-subtitle">SOCIAL PROJECTS</div>
+                        </div>
+                        <div class="item-date">2024 - Present</div>
+                    </div>
+                    <div class="item-content">
+                        <ul>
+                            <li>Developed and integrated cloud solutions using Oracle Cloud Infrastructure Foundation. Certified in June 2024.</li>
+                            <li>Designed and implemented backend services for web applications.</li>
+                            <li>Collaborated with UI developers and database managers to ensure seamless integration.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <div class="container">
+                <h2>PROJECTS</h2>
+                
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">AI PC ASSIST</div>
+                        </div>
+                        <div class="item-date">JULY 2024 - NOV 2024</div>
+                    </div>
+                    <div class="item-content">
+                        <p>This project aims to develop an intelligent system capable of performing tasks on a PC remotely through natural language commands given via a mobile or web app.</p>
+                        <ul>
+                            <li>Using advanced NLP (Natural Language Processing) and automation techniques, the system detects task intents and executes them.</li>
+                            <li>The tasks are executed by using INTEL DEEPNN model in NLP and INTEL OPEN-VINO model in CV.</li>
+                            <li>The project also includes file transfer functionalities between mobile and PC when they are connected.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">REAL TIME REPORT GENERATOR FOR ERP PLATFORM</div>
+                        </div>
+                        <div class="item-date">AUG 2024 - SEP 2024</div>
+                    </div>
+                    <div class="item-content">
+                        <p>During my internship, I focused on developing an intelligent system that generates real-time reports for the Cloud Zoo ERP platform.</p>
+                        <ul>
+                            <li>Leveraged advanced NLP and automation techniques to analyze data and provide efficient insights.</li>
+                            <li>Enhanced data accessibility to support informed decision-making processes within organizations.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">ATTENDANCE SYSTEM FOR OFFICE & COLLEGE</div>
+                        </div>
+                        <div class="item-date">MAY 2023 - JUNE 2024</div>
+                    </div>
+                    <div class="item-content">
+                        <p>The Attendance System for Office & College is a comprehensive solution designed to streamline and automate attendance management processes.</p>
+                        <ul>
+                            <li>Leveraged modern web technologies to provide a reliable, efficient, and user-friendly platform.</li>
+                            <li>Implemented features for tracking attendance, managing records, and generating reports.</li>
+                            <li>Designed to cater to both academic institutions and corporate environments.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <div class="container">
+                <h2>SKILLS</h2>
+                
+                <div class="grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">🤖</div>
+                        <div class="skill-title">Artificial Intelligence</div>
+                        <p>Experience in developing intelligent systems that can perform tasks requiring human intelligence.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">📊</div>
+                        <div class="skill-title">Machine Learning</div>
+                        <p>Proficient in implementing algorithms that enable systems to learn from and improve with data.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🧠</div>
+                        <div class="skill-title">Deep Learning</div>
+                        <p>Skilled in neural network architectures and frameworks for complex pattern recognition.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">📈</div>
+                        <div class="skill-title">Data Science</div>
+                        <p>Capable of extracting insights and knowledge from structured and unstructured data.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">💻</div>
+                        <div class="skill-title">Back End Web Development</div>
+                        <p>Experience in building server-side applications using Flask and other technologies.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">⌨️</div>
+                        <div class="skill-title">Programming Languages</div>
+                        <p>Proficient in Python, C, Java, HTML, CSS, and JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education">
+            <div class="container">
+                <h2>EDUCATION</h2>
+                
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">ANNA UNIVERSITY REGIONAL CAMPUS COIMBATORE</div>
+                            <div class="item-subtitle">Artificial Intelligence and Data Science</div>
+                        </div>
+                        <div class="item-date">2022 - 2026</div>
+                    </div>
+                </div>
+                
+                <h2 style="margin-top: 3rem;">CERTIFICATIONS</h2>
+                
+                <div class="certifications">
+                    <div class="certification-badge">
+                        <div class="badge-icon">🏅</div>
+                        <div class="badge-content">
+                            <h4>Oracle Cloud Infrastructure Foundation</h4>
+                            <p>ORACLE | April - June, 2024</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-badge">
+                        <div class="badge-icon">🏅</div>
+                        <div class="badge-content">
+                            <h4>Chatgpt for Everyone</h4>
+                            <p>Guvi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-badge">
+                        <div class="badge-icon">🏅</div>
+                        <div class="badge-content">
+                            <h4>Machine Learning</h4>
+                            <p>Guvi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <div class="container">
+                <h2>GET IN TOUCH</h2>
+                
+                <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <p style="margin-bottom: 2rem;">I'm currently looking for internship opportunities in AI and Data Science. Feel free to reach out if you'd like to discuss potential collaborations or have any questions.</p>
+                    
+                    <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                        <a href="mailto:siva99527@gmail.com" class="button">Email Me</a>
+                        <a href="tel:+919363440752" class="button">Call Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>SIVA PRAKASH S</h3>
+                    <p>Artificial Intelligence and Data Science Engineer</p>
+                </div>
+                
+                <div class="social-links">
+                    <!-- Replace with actual social media links if available -->
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="GitHub">GH</a>
+                    <a href="#" title="Twitter">🐦</a>
+                </div>
+                
+                <div class="copyright">
+                    © 2025 Siva Prakash S. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleNav() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+        
+        // Add active class to nav items on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
