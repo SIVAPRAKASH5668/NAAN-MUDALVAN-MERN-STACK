@@ -4,15 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" src="design.css">
 </head>
 <body>
-    <div class ='main'>
-    <h1> hello world this is </h1>
-    <div class ='image-container'>
-        <img src="Pictures/WhatsApp Image 2025-01-27 at 8.46.38 AM(2).jpeg",alt='none',height='300',width='200'>
-    </div>
-</div>
-</style>
+    <form>
+            <label for ="todo">List elements</label>
+            <input type="text" name="todo" id="todo" value='' placeholder="ENTER THE TO-DO LIST"/>
+            <br><br>
+            <label for ="add"> product elements</label>
+            <input type="numbers" name="addprod" id="addprod" value="" placeholder="enter the number elements"/>
+            <br><br>
+            <label for ="button">Button elements</label>
+            <input type="button" name='btn' value="ADD" id="btn"/>
+            <br><br>
+    </form>
+            <table>
+                <thead>
+                  
+                    <tr>
+                    <th>S:NO</th>
+                    <th>Give some description</th>
+                    <th>Action</th>
+                    </tr>
+                    <tbody id="tbl" value='' placeholder="add the items"></tbody>
+                </thead>
+            </table>
+            <!--<label for ="password">
+                <input type="password" name="pass" id="pass" value="" placeholder="enter the password"/>
+            </label>
+            <br><br>
+            <button type="login">login</button>-->
+        </form>
+    <script src="app.js"></script>
 </body>
 </html>
